@@ -2,789 +2,103 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>OPEN BOOK | 
-    اجتماع ثانوى  دير القديس أباهور البهجوري أستاذ فادى رضا </title>
-
-<style>
-*{
-    box-sizing:border-box;
-    margin:0;
-    padding:0;
-}
-
-html{
-    scroll-behavior:smooth;
-}
-
-body{
-    font-family:Tahoma, Arial, sans-serif;
-    background:#07111f;
-    color:white;
-    line-height:1.9;
-}
-
-/* القائمة */
-nav{
-    position:fixed;
-    top:0;
-    width:100%;
-    z-index:1000;
-    background:rgba(7,17,31,.92);
-    backdrop-filter:blur(12px);
-    border-bottom:1px solid rgba(255,255,255,.1);
-}
-
-.nav-container{
-    max-width:1200px;
-    margin:auto;
-    padding:12px 20px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-}
-
-.logo{
-    font-size:22px;
-    font-weight:bold;
-    color:#ffd54a;
-}
-
-.nav-links{
-    display:flex;
-    gap:20px;
-}
-
-.nav-links a{
-    color:white;
-    text-decoration:none;
-    font-size:14px;
-}
-
-.nav-links a:hover{
-    color:#ffd54a;
-}
-
-/* الواجهة */
-.hero{
-    min-height:100vh;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-    position:relative;
-    overflow:hidden;
-    padding:100px 20px 50px;
-    background:
-        linear-gradient(rgba(4,10,20,.45),rgba(4,10,20,.8)),
-       url("178844626654.png");
-    background-size:cover;
-    background-position:center;}
-
-.hero::before{
-    content:"";
-    position:absolute;
-    inset:0;
-    background:linear-gradient(135deg,
-        rgba(0,195,255,.18),
-        transparent 40%,
-        rgba(255,174,0,.18));
-}
-
-.hero-content{
-    position:relative;
-    z-index:2;
-    max-width:850px;
-}
-
-.hero h1{
-    font-size:clamp(55px,10vw,120px);
-    letter-spacing:5px;
-    text-shadow:0 10px 30px rgba(0,0,0,.6);
-}
-
-.hero h2{
-    font-size:clamp(22px,4vw,42px);
-    color:#ffd54a;
-    margin-top:10px;
-}
-
-.hero p{
-    font-size:20px;
-    margin-top:20px;
-}
-
-.btn{
-    display:inline-block;
-    margin-top:30px;
-    padding:14px 35px;
-    background:linear-gradient(135deg,#ff9d00,#ffcc00);
-    color:#111;
-    text-decoration:none;
-    font-weight:bold;
-    border-radius:50px;
-    transition:.3s;
-}
-
-.btn:hover{
-    transform:translateY(-4px);
-    box-shadow:0 10px 30px rgba(255,180,0,.4);
-}
-
-/* الأقسام */
-section{
-    padding:90px 20px;
-}
-
-.container{
-    max-width:1150px;
-    margin:auto;
-}
-
-.section-title{
-    text-align:center;
-    font-size:38px;
-    margin-bottom:50px;
-}
-
-.section-title span{
-    color:#ffd54a;
-}
-
-/* أهم ما قيل */
-.quote-box{
-    max-width:850px;
-    margin:auto;
-    padding:40px;
-    text-align:center;
-    border-radius:25px;
-    background:linear-gradient(135deg,#102a43,#172f50);
-    border:1px solid rgba(255,255,255,.1);
-    box-shadow:0 20px 50px rgba(0,0,0,.3);
-}
-
-.quote-box .main-quote{
-    font-size:28px;
-    font-weight:bold;
-    color:#ffd54a;
-}
-
-/* الضيوف */
-.guests{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-    gap:20px;
-}
-
-.guest{
-    padding:25px;
-    border-radius:20px;
-    background:#0e1d30;
-    border:1px solid rgba(255,255,255,.08);
-    transition:.3s;
-}
-
-.guest:hover{
-    transform:translateY(-8px);
-    border-color:#ffd54a;
-}
-
-.guest h3{
-    color:#ffd54a;
-    font-size:21px;
-}
-
-.guest p{
-    color:#b8c7d9;
-}
-
-/* المحاضرات */
-.lectures{
-    display:grid;
-    gap:30px;
-}
-
-.lecture{
-    background:#0d1b2a;
-    border-radius:25px;
-    overflow:hidden;
-    border:1px solid rgba(255,255,255,.08);
-}
-
-.lecture-header{
-    padding:25px;
-    background:linear-gradient(135deg,#123b5d,#0c2036);
-}
-
-.lecture-header h2{
-    color:#ffd54a;
-}
-
-.lecture-content{
-    padding:30px;
-}
-
-.lecture ul{
-    list-style:none;
-}
-
-.lecture li{
-    background:#12263b;
-    padding:15px;
-    margin-bottom:10px;
-    border-radius:12px;
-    border-right:4px solid #ffd54a;
-}
-
-/* معرض الصور */
-.gallery{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-    gap:18px;
-}.gallery-item{
-    border-radius:20px;
-    overflow:hidden;
-    background:#0e1d30;
-    min-height:180px;
-    cursor:pointer;
-    transition:.3s;
-    border:1px solid rgba(255,255,255,.08);
-}
-
-.gallery-item:hover{
-    transform:scale(1.03);
-}
-
-.gallery img{
-    width:100%;
-    height:250px;
-    object-fit:cover;
-    display:block;
-}
-
-.gallery video{
-    width:100%;
-    height:250px;
-    object-fit:cover;
-    display:block;
-}
-
-.loading{
-    text-align:center;
-    color:#b8c7d9;
-    grid-column:1/-1;
-    padding:30px;
-}
-
-/* تكبير الصور */
-.lightbox{
-    display:none;
-    position:fixed;
-    z-index:5000;
-    inset:0;
-    background:rgba(0,0,0,.92);
-    align-items:center;
-    justify-content:center;
-    padding:20px;
-}
-
-.lightbox img{
-    max-width:95%;
-    max-height:90%;
-    border-radius:10px;
-}
-
-.close{
-    position:absolute;
-    top:25px;
-    left:30px;
-    font-size:40px;
-    cursor:pointer;
-}
-
-/* Footer */
-footer{
-    text-align:center;
-    padding:35px 20px;
-    background:#050b13;
-    color:#aebdcb;
-}
-
-@media(max-width:650px){
-
-    .nav-links{
-        display:none;
-    }
-
-    .hero h1{
-        font-size:55px;
-    }
-
-    .section-title{
-        font-size:28px;
-    }
-
-    .quote-box .main-quote{
-        font-size:22px;
-    }
-
-}
-</style>
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="description" content="Open Book - مؤتمر الكتاب المقدس">
+<title>Open Book 📖</title>
+<link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<!-- القائمة -->
-<nav>
-    <div class="nav-container">
-        <div class="logo">📖 OPEN BOOK</div>
-
-        <div class="nav-links">
-            <a href="#home">الرئيسية</a>
-            <a href="#about">المؤتمر</a>
-            <a href="#guests">الضيوف</a>
-            <a href="#lectures">المحاضرات</a>
-            <a href="#gallery">المعرض</a>
-        </div>
-    </div>
+<nav class="nav">
+  <a class="brand" href="#home">OPEN <span>BOOK</span> 📖</a>
+  <div class="links">
+    <a href="#message">الرسالة</a>
+    <a href="#speakers">المحاضرات</a>
+    <a href="#summaries">الملخصات</a>
+  </div>
 </nav>
 
+<header id="home" class="hero">
+  <img src="assets/hero.png" alt="Open Book" class="hero-image">
+  <div class="shade"></div>
+  <div class="hero-content">
+    <span class="tag">📖 مؤتمر OPEN BOOK</span>
+    <h1>افتح الكتاب...<br><span>وخلي الحياة تتكلم</span></h1>
+    <p>الكتاب المقدس حياة تُعاش وليس كتابًا يُفتح.</p>
+    <a href="#message" class="button">اكتشف الرسالة ↓</a>
+  </div>
+</header>
 
-<!-- الصفحة الرئيسية -->
-<section class="hero" id="home">
-
-    <div class="hero-content">
-
-        <h1>OPEN BOOK</h1>
-
-        <h2>دير القديس أباهور البهجوري ⛪</h2>
-
-        <p>
-            مؤتمر OPEN BOOK
-            <br>
-            لأن الكتاب المقدس حياة تُعاش
-        </p>
-
-        <a href="#about" class="btn">
-            اكتشف المؤتمر ↓
-        </a>
-
-    </div>
-
-</section>
-
-
-<!-- أهم ما قيل -->
-<section id="about">
-
+<section id="message" class="section message">
 <div class="container">
+  <div class="eyebrow">رسالة المؤتمر</div>
+  <h2>الكتاب المقدس مش مجرد صفحات</h2>
+  <div class="line"></div>
+  <blockquote>«الكتاب المقدس حياة تُعاش وليس كتابًا يُفتح»</blockquote>
+  <p class="lead">متخليش <b>Open Book</b> يبقى يوم في السنة... خليه عادة حقيقية في حياتك، وكلمة ربنا تكون معاك كل يوم.</p>
 
-<h1 class="section-title">
-    ✨ أهم ما <span>قيل في المؤتمر</span>
-</h1>
-
-<div class="quote-box">
-
-<p class="main-quote">
-📖 الكتاب المقدس حياة تُعاش وليس كتابًا يُفتح
-</p>
-
-<br>
-
-<p>
-متخليش OPEN BOOK يبقى يوم في السنة
-</p>
-
-<p style="color:#ffd54a;font-size:22px;font-weight:bold;">
-خليه عادة في حياتك ❤️
-</p>
-
+  <div class="steps">
+    <article><small>01</small><h3>افتح</h3><p>افتح الكتاب بقلب مستعد يسمع.</p></article>
+    <article><small>02</small><h3>افهم</h3><p>اكتشف المعنى والرسالة في حياتك.</p></article>
+    <article><small>03</small><h3>اعش</h3><p>حوّل الكلمة إلى حياة وسلوك يومي.</p></article>
+  </div>
 </div>
-
-</div>
-
 </section>
 
-
-<!-- الضيوف -->
-<section id="guests" style="background:#091522;">
-
+<section id="speakers" class="section speakers">
 <div class="container">
-
-<h1 class="section-title">
-🎤 ضيوف <span>المؤتمر</span>
-</h1>
-
-<div class="guests">
-
-<div class="guest">
-<h3>أبونا ببنودة نصيف</h3>
-<p>📖 الكتاب المقدس</p>
+  <div class="eyebrow yellow">محاضرات المؤتمر</div>
+  <h2>رحلة في كلمة الله</h2>
+  <div class="speaker-grid">
+    <article><div>✝</div><h3>أبونا ببنودة نصيف</h3><p>الكتاب المقدس</p></article>
+    <article><div>✦</div><h3>أبونا تكلا</h3><p>الثعالب الصغيرة</p></article>
+    <article><div>✦</div><h3>أبونا دانيال ماهر</h3><p>الرد على البدع</p></article>
+    <article><div>✦</div><h3>ملخصات المؤتمر</h3><p>أهم النقاط والموضوعات</p></article>
+  </div>
 </div>
-
-<div class="guest">
-<h3>أبونا تكلا</h3>
-<p>🦊 الثعالب الصغيرة</p>
-</div>
-
-<div class="guest">
-<h3>أبونا دانيال ماهر</h3>
-<p>✝️ الرد على البدع</p>
-</div>
-
-<div class="guest">
-<h3>الدكتور إبراهيم</h3>
-<p>⚖️ الموازين المقلوبة</p>
-</div>
-
-<div class="guest">
-<h3>الأستاذ مينا</h3>
-<p>💻 الابتزاز الإلكتروني</p>
-</div>
-
-<div class="guest">
-<h3>المعلم عزيز</h3>
-<p>📜 العهد القديم</p>
-</div>
-
-</div>
-
-</div>
-
 </section>
 
-
-<!-- المحاضرات -->
-<section id="lectures">
-
+<section id="summaries" class="section summaries">
 <div class="container">
+  <div class="eyebrow">ملخص المحاضرات</div>
+  <h2>أهم ما تعلمناه في Open Book</h2>
+  <p class="lead">اضغط على أي ملخص لمشاهدته بحجم أكبر.</p>
 
-<h1 class="section-title">
-📚 <span>محاضرات المؤتمر</span>
-</h1>
+  <div class="summary-grid">
+    <a class="summary-card" href="assets/lecture-1.png" target="_blank">
+      <img src="assets/lecture-1.png" alt="ملخص تاريخ العهد القديم">
+      <div class="summary-label"><b>ملخص ١</b><span>تاريخ العهد القديم</span></div>
+    </a>
 
-<div class="lectures">
+    <a class="summary-card" href="assets/lecture-2.jpg" target="_blank">
+      <img src="assets/lecture-2.jpg" alt="ملخص الثعالب الصغيرة">
+      <div class="summary-label"><b>ملخص ٢</b><span>الثعالب الصغيرة</span></div>
+    </a>
 
-
-<!-- محاضرة أبونا تكلا -->
-<div class="lecture">
-
-<div class="lecture-header">
-<h2>🦊 الثعالب الصغيرة المفسدة</h2>
-<p>أبونا تكلا</p>
+    <a class="summary-card" href="assets/lecture-3.png" target="_blank">
+      <img src="assets/lecture-3.png" alt="ملخص الرد على البدع والخرافات">
+      <div class="summary-label"><b>ملخص ٣</b><span>الرد على البدع والخرافات</span></div>
+    </a>
+  </div>
 </div>
-
-<div class="lecture-content">
-
-<ul>
-
-<li><b>الثعلب الأول: التهاون</b><br>مثال عيسو عندما احتقر البكورية.</li>
-
-<li><b>الثعلب الثاني: التبرير</b><br>التبرير ضد التوبة.</li>
-
-<li><b>الثعلب الثالث: التأجيل</b><br>لا تعرفون الوقت ولا الساعة.</li>
-
-<li><b>الثعلب الرابع: التدليل</b><br>تدليل النفس عن الصلاة مثل: رجلي وجعاني، خليها يوم تاني.</li>
-
-<li><b>الثعلب الخامس: الاكتفاء</b><br>عندما يقول الإنسان: أنا كده تمام. وأعظم مثال الفريسي والعشار.</li>
-
-</ul>
-
-</div>
-
-</div>
-
-
-<!-- أبونا دانيال -->
-<div class="lecture">
-
-<div class="lecture-header">
-<h2>✝️ ١٠ قواعد للرد على البدع والهرطقات</h2>
-<p>أبونا دانيال ماهر</p>
-</div>
-
-<div class="lecture-content">
-
-<ul><li>١. مراجعة النص الكامل وليس الجزء.</li>
-<li>٢. الفرق بين الحرف والروح.</li>
-<li>٣. الكتاب يفسر الكتاب.</li>
-<li>٤. التفريق بين السماح والأمر.</li>
-<li>٥. التدرج.</li>
-<li>٦. هدف الكتاب المقدس هو الخلاص.</li>
-<li>٧. المعجزة تخرج عن العقل البشري.</li>
-<li>٨. اللغة الأصلية والعادات.</li>
-<li>٩. تفسير الآباء القدماء.</li>
-<li>١٠. الهدف من الجدال هو البنيان.</li>
-
-</ul>
-
-</div>
-
-</div>
-
-
-<!-- المعلم عزيز -->
-<div class="lecture">
-
-<div class="lecture-header">
-<h2>📜 نظرة عامة على نصف العهد القديم</h2>
-<p>المعلم عزيز</p>
-</div>
-
-<div class="lecture-content">
-
-<ul>
-
-<li><b>آدم — تكوين ١–٥</b><br>الخلق والسقوط.</li>
-
-<li><b>نوح — تكوين ٦–١١</b><br>الطوفان وبداية الأمم.</li>
-
-<li><b>إبراهيم وأولاده — تكوين ١٢–٥٠</b><br>الوعد والنزول إلى مصر.</li>
-
-<li><b>يشوع — يشوع ١–٢٤</b><br>الدخول لأرض الموعد والتقسيم بين الأسباط.</li>
-
-<li><b>صموئيل</b><br>الدورة المتكررة.</li>
-
-<li><b>شاول — صموئيل الأول ٩–٣١</b><br>أول ملك على إسرائيل.</li>
-
-<li><b>داود</b><br>توسيع المملكة.</li>
-
-<li><b>سليمان — ملوك الأول ١–١١</b><br>السلام وبناء الهيكل.</li>
-
-</ul>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
 </section>
 
-
-<!-- معرض الصور -->
-<section id="gallery" style="background:#091522;">
-
-<div class="container">
-
-<h1 class="section-title">
-📸 معرض <span>الصور والفيديوهات</span>
-</h1>
-
-<p style="text-align:center;color:#b8c7d9;margin-bottom:30px;">
-   ✨
-</p>
-
-<div class="gallery" id="galleryContainer">
-
-<div class="loading">
-     📸
+<section class="section about">
+<div class="container about-box">
+  <div>
+    <div class="eyebrow">OPEN BOOK</div>
+    <h2>خلي الكتاب المفتوح<br>عادة في حياتك</h2>
+    <p>مش يوم واحد، ومش مناسبة واحدة. رحلة مستمرة مع كلمة الله.</p>
+  </div>
+  <div class="book">📖</div>
 </div>
-
-</div>
-
-</div>
-
 </section>
-
 
 <footer>
-
-<h3>⛪  اجتماع ثانوى دير القديس أباهور البهجوري</h3>
-
-<p>
-OPEN BOOK © 2026
-</p>
-
+<strong>OPEN <span>BOOK</span> 📖</strong>
+<p>الكتاب المقدس حياة تُعاش</p>
+<small>© Open Book Conference</small>
 </footer>
-
-
-<!-- نافذة تكبير الصورة -->
-<div class="lightbox" id="lightbox">
-
-<span class="close" onclick="closeImage()">×</span>
-
-<img id="lightboxImage">
-
-</div>
-
-
-<script>
-
-/* =====================================
-   إعدادات GitHub
-===================================== */
-
-/*
-لو اسم حسابك مختلف، غيّر الاسم هنا
-*/
-
-const OWNER = "fel123456789100-prog";
-const REPO = "Open--book";
-const BRANCH = "main";
-
-
-/* =====================================
-   تحميل الصور تلقائيًا من GitHub
-===================================== */
-
-const galleryContainer =
-document.getElementById("galleryContainer");
-
-
-async function loadFolder(folder, type){
-
-    const url =
-    https://api.github.com/repos/${OWNER}/${REPO}/contents/${folder}?ref=${BRANCH};
-
-    try{
-
-        const response = await fetch(url);
-
-        if(!response.ok) return;
-
-        const files = await response.json();
-
-        files.forEach(file => {
-
-            if(file.type !== "file") return;
-
-            const item =
-            document.createElement("div");
-
-            item.className = "gallery-item";
-
-
-            /* الصور */
-
-            if(type === "image"){
-
-                const img =
-                document.createElement("img");
-
-                img.src = file.download_url;
-                img.loading = "lazy";
-
-                img.onclick = () =>
-                openImage(file.download_url);
-
-                item.appendChild(img);
-
-            }
-
-
-            /* الفيديوهات */
-
-            if(type === "video"){
-
-                const video =
-                document.createElement("video");
-
-                video.src = file.download_url;
-
-                video.controls = true;
-
-                video.preload = "metadata";
-
-                item.appendChild(video);
-
-            }
-
-
-            galleryContainer.appendChild(item);
-
-        });
-
-    }
-
-    catch(error){
-
-        console.log("لم يتم العثور على المجلد:", folder);
-
-    }
-
-}
-
-
-/* تشغيل المعرض */
-
-async function loadGallery(){
-
-    galleryContainer.innerHTML = "";
-
-    await loadFolder("media/images","image");
-
-    await loadFolder("media/videos","video");
-
-
-    if(galleryContainer.children.length === 0){
-
-        galleryContainer.innerHTML = 
-
-        <div class="loading">
-
-        📸 لا توجد صور أو فيديوهات حتى الآن
-
-        <br>
-
-        أضف ملفاتك إلى:
-
-        <br><br>
-
-        media/images
-
-        <br>
-
-        أو
-
-        <br>
-
-        media/videos
-
-        </div>
-
-        ;
-
-    }
-
-}
-
-loadGallery();/* =====================================
-   تكبير الصور
-===================================== */
-
-function openImage(src){
-
-    document.getElementById("lightboxImage").src = src;
-
-    document.getElementById("lightbox").style.display = "flex";
-
-}
-
-
-function closeImage(){
-
-    document.getElementById("lightbox").style.display = "none";
-
-}
-
-
-document
-.getElementById("lightbox")
-.addEventListener("click",function(e){
-
-    if(e.target === this){
-
-        closeImage();
-
-    }
-
-});
-
-</script>
 
 </body>
 </html>
